@@ -12,6 +12,7 @@ mod ar;
 mod de;
 mod es;
 mod fr;
+mod hi;
 mod it;
 mod ja;
 mod ko;
@@ -29,7 +30,7 @@ pub struct Language {
     pub table: &'static [(&'static str, &'static str)],
 }
 
-const COUNT: usize = 10;
+const COUNT: usize = 11;
 
 pub static LANGUAGES: [Language; COUNT] = [
     Language { code: "en", name: "English", english: "English", table: &[] },
@@ -42,6 +43,7 @@ pub static LANGUAGES: [Language; COUNT] = [
     Language { code: "zh-Hans", name: "简体中文", english: "Chinese (Simplified)", table: zh_hans::TABLE },
     Language { code: "ko", name: "한국어", english: "Korean", table: ko::TABLE },
     Language { code: "ar", name: "العربية", english: "Arabic", table: ar::TABLE },
+    Language { code: "hi", name: "हिन्दी", english: "Hindi", table: hi::TABLE },
 ];
 
 static MAPS: [OnceLock<HashMap<&'static str, &'static str>>; COUNT] = [const { OnceLock::new() }; COUNT];
